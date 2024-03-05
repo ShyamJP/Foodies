@@ -1,0 +1,12 @@
+.Cardlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+.product_heading{
+    text-align: center;
+    /* color: #407c87; */
+    color: #FCBC58;
+}

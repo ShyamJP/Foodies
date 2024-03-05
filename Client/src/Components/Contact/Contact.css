@@ -1,0 +1,53 @@
+.contactpage{
+    margin-top: -25px;
+    background-color: #ccc;
+}
+.contactlink{
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 10px 10px 40px gray;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #082340;
+    color: white;
+}
+.container{
+    animation: animate ease-in-out 1s forwards;
+    margin-top: 100px;
+    background-color: #082340;
+    color: white;
+}
+.contactlink a{
+    text-decoration: none;
+    color: white;
+}
+
+.form{
+    width: 400px;
+    transform: 1s;
+}
+
+
+
+@media(max-width:520px)
+{
+    .form{
+        width: 350px;
+    }
+    .main_div{
+        width: 350px;
+    }
+}
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}

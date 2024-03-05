@@ -1,0 +1,13 @@
+.btnall{
+    /* height: 30px; */
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid orangered;
+    transition: 0.8s;
+}
+.btnall:hover{
+    border-radius: 20px;
+    background-color: orangered;
+}

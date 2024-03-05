@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+main{
+    margin-top: 70px;
+    background-color: #EEE;
+    font-family: 'Roboto Slab', serif;
+    min-height: 100vh;
+}
