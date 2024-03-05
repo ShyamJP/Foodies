@@ -11,7 +11,7 @@ const Filter = () => {
           className="search-box"
           placeholder="Search your favourite food"
           value={query}
-          onChange={(event) => (event.target.value)}
+          onChange={(event) => setQuery(event.target.value)}
         />
       </div>
       <div className="card-group">

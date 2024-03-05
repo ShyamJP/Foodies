@@ -35,17 +35,17 @@ const Product = () => {
     getAllProducts();
   },[])
   const Filterdata = (val) => {
-    const filtereddata = Products.filter((p) => p.category === val)
+    const filtereddata = product.filter((p) => p.category === val)
     setupdatedata(filtereddata);
   }
 
   const Filterdatabytiming = (val) => {
     let filtereddata;
     if(val === ""){
-      filtereddata = Products;
+      filtereddata = product;
     }
     else{
-      filtereddata = Products.filter((p) => p.timing === val)
+      filtereddata = product.filter((p) => p.timing === val)
     }
     setupdatedata(filtereddata);
   }
@@ -70,7 +70,7 @@ const Product = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItemButton onClick={() => setupdatedata(Products)}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="All Products" /></ListItemButton>
+        <ListItemButton onClick={() => setupdatedata(product)}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="All Products" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("pizza")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Pizza" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Burger")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Burger" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Panjabi")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Panjabi" /></ListItemButton>
@@ -143,7 +143,7 @@ const Product = () => {
 
 
         {/* <Display /> */}
-        { product ===  null ? (console.log(false)) : (<Cardlist data={product} />)}
+        { data ===  null ? (console.log(false)) : (<Cardlist data={data} />)}
         {/* <Cardlist data={product} /> */}
         {/* {product !== null ? (<Cardlist data={product} />) : ""} */}
       </main>
