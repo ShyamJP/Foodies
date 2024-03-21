@@ -14,18 +14,18 @@ import ListItemText from '@mui/material/ListItemText';
 import Footer from '../../UI/Footer/Footer';
 import Filter from './Filter';
 import axios from 'axios';
-// import TextField from '@mui/material/TextField';
 
 // main product function
 const Product = () => {
 
   const [product , setProduct] = useState(null);
-  const [data, setupdatedata] = useState(product);
+  const [data, setupdatedata] = useState(null);
   
   const getAllProducts = async()=>{
     await axios.get('http://localhost:3001/data')
     .then(result=>{
-      setProduct(result.data.result)
+      setProduct(result.data.result);
+      setupdatedata(result.data.result);
     console.log(result);
     })
     .catch(err=>console.log(err))
@@ -34,6 +34,7 @@ const Product = () => {
   useEffect(()=>{
     getAllProducts();
   },[])
+  
   const Filterdata = (val) => {
     const filtereddata = product.filter((p) => p.category === val)
     setupdatedata(filtereddata);
@@ -50,15 +51,12 @@ const Product = () => {
     setupdatedata(filtereddata);
   }
 
-  const [state, setState] = React.useState({
-    left: false
-  });
+  const [state, setState] = React.useState({left: false});
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -70,12 +68,14 @@ const Product = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItemButton onClick={() => setupdatedata(product)}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="All Products" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("pizza")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Pizza" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("Burger")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Burger" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("Panjabi")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Panjabi" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("Gujarati")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Gujarati" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("Sandwich")}>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Sandwich" /></ListItemButton>
+        <ListItemButton onClick={() => setupdatedata(product)}> <ListItemText primary="All Products" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("pizza")}><img src='/Photos/pizzaicon.png' style={{width:"30px" , marginRight:"10px"}} alt='imag'/>  <ListItemText primary="Pizza" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Burger")}><img src='/Photos/burgericon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Burger" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Burger")}><img src='/Photos/subwayicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Subway" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Panjabi")}><img src='/Photos/dishicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Panjabi" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Gujarati")}><img src='/Photos/dishicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Gujarati" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Sandwich")}><img src='/Photos/sandwhichicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Sandwich" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("SouthIndian")}><img src='/Photos/southindianicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="South Indian" /></ListItemButton>
       </List>
       <Divider />
       <List>
@@ -87,11 +87,6 @@ const Product = () => {
   return (
     <>
       <Navbar />
-
-
-      {/* <button onClick={() => setupdatedata(Products)}>All</button>
-      <button onClick={() => Filterdata("pizza")}>Pizza</button>
-      <button onClick={() => Filterdata("Burger")}>Burger</button> */}
 
       <main>
         {/* search bar and all filter  */}
@@ -139,13 +134,11 @@ const Product = () => {
 
           {/* SEARCH BAR */}
         </div>
-          <Filter />
+          {Products && <Filter  products= {product}/>}
 
 
         {/* <Display /> */}
         { data ===  null ? (console.log(false)) : (<Cardlist data={data} />)}
-        {/* <Cardlist data={product} /> */}
-        {/* {product !== null ? (<Cardlist data={product} />) : ""} */}
       </main>
       <Footer />
     </>

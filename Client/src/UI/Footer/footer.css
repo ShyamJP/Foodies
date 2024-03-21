@@ -1,12 +1,11 @@
-.contact{
-    background-color: rgb(41, 44, 52);
-    text-align: center;
+.footer{
+    background-color: black;
+    /* text-align: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(212, 212, 212);
-    /* font-family: 'Abel', sans-serif;   */
-    margin-top: 50px;
+    font-family: 'Abel', sans-serif;  
   }
 
   #icon{

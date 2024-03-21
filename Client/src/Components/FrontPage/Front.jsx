@@ -10,9 +10,8 @@ const Front = () => {
             <div className="front1">
                 <div className="div1"><img src="/Photos/FoodDish.png" alt="" /></div>
                 <div className="div2">
-                    <h1>Welcome to the Foodies</h1>
+                    <h1>Welcome to the Hungry Up</h1>
                     <h3>Enjoy Our Delicious Food</h3>
-                    <p></p>
                 </div>
             </div>
             </div>

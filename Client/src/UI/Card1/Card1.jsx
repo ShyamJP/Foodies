@@ -41,7 +41,7 @@ const Card1 = (props) => {
     return(
     <>
     
-    <div class="card1" data-aos="flip-left">
+    <div class="card1" data-aos="flip-left" key={props.id}>
       {/* {console.log(props.data)} */}
             <div class="card__image">
                <img src={props.data.url} alt="Salad" />

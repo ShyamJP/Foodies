@@ -47,11 +47,12 @@ const Login = () => {
         event.preventDefault()
         axios.post("http://localhost:3001/login", { email, password })
             .then(result => {
-                // console.log(result) //show login user data for test
-                if (result.data.user.email === email) {
-                    localStorage.setItem("name", result.data.user.name)
-                    localStorage.setItem("email", result.data.user.email)
-                    localStorage.setItem("id", result.data.user._id)
+                 console.log(result) //show login user data for test
+                // if (result.data.userData.email === email) {
+                if (result.data.userData.token) {
+                    localStorage.setItem("name", result.data.userData.name)
+                    localStorage.setItem("email", result.data.userData.email)
+                    localStorage.setItem("id", result.data.userData.id)
                     navigate("/home")
                 }
             })
@@ -124,34 +125,6 @@ const Login = () => {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
-            {/* <div>
-                <div>
-                    <h2>Login</h2>
-                    <form onSubmit={submitHandeler}>
-                        <div>
-                            <TextField id="outlined-basic" label="E-mail" variant="outlined" />
-                            <TextField
-                                id="outlined-password-input"
-                                label="Password"
-                                type="password"
-                                autoComplete="current-password"
-                            />
-                    
-                            <label htmlFor="email"><strong>Email</strong></label>
-                            <input type="email" placeholder="Enter Name" autoComplete="off" name="email"
-                                onChange={(e) => setemail(e.target.value)} />
-                        </div>
-                        <div>
-                            <label htmlFor="password"><strong>Password</strong></label>
-                            <input type="password" placeholder="Enter Password" name="password"
-                                onChange={(e) => setpassword(e.target.value)} />
-                        </div>
-                        <button type="sumbit">Login</button>
-                        <p>Create New saccount</p>
-                        <Link to="/register">Signup</Link>
-                    </form>
-                </div>
-            </div> */}
         </>
     )
 }

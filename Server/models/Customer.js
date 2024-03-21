@@ -18,8 +18,8 @@ const CustomerSchema = new mongoose.Schema({
         require: true
     },
     Date:{
-        type: Date,
-        default:Date.now        
+        type: String,
+        default: new Date().toDateString()     
     }
 })
 

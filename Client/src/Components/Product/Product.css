@@ -25,6 +25,8 @@
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
   }
   
   .filter-btn{
@@ -85,4 +87,12 @@
 .search-box:target{
   border: 1.5px solid orangered;
 
+}
+@media (max-width:800px) {
+  .search-box{
+    width: 80%;
+  }
+  .filter-container{
+    flex-direction: column;
+  }
 }

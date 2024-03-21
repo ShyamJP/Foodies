@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Navbar/NavbarResp";
 import axios from "axios";
+import OrderCard from "../../UI/OrderCard/OrderCard"
 
 const Orders = ()=>{
     const [orders,setOrders] = useState([]);
@@ -10,6 +11,7 @@ const Orders = ()=>{
     const getOrders = async()=>{
         await axios.post('http://localhost:3001/orders',{Id})
         .then((res)=>{
+            // console.log(res);
             setOrders(res.data.Orders);
         })
         .catch(err => console.log(err))
@@ -22,29 +24,19 @@ const Orders = ()=>{
         <>
             <Navbar />
             <main>
-            <h1 className="heading">Your Orders</h1>
+            {orders.length !== 0 && <h1 className="heading">Your Orders</h1>}
             
-            <div>
-                <ul>
+            <div style={{display:"grid",alignItems:"center",justifyContent:"center",gap:"10px"}}>
                     {
-                        (orders === null )
-                        ? (<h2>No Orders available</h2>)
-                        : orders.map((item)=> <div>
-                            {item.Date} 
-                            <p>{item.Total}</p>
-                            {
-                                (item.Products.map(i =>
-                                            <div className="mx-auto" key={i._id}>
-                                                <h3>{i.name} x {i.qty}</h3>
-                                            </div>
-                                    ))
-                            }
+                        (orders.length === 0 )
+                        ? (<a href="/product"><img className="empty-cart" src="/Photos/orderNow.png" style={{width:"400px" ,height:"400px"}} alt="img" /></a>)
+                        : orders.map((item)=> <div className="order">
+                            <OrderCard OrderDetail={item}/>
                             </div>
                         )
                     }
-                </ul>
             </div>
-
+                    
             </main>
         </>
     )

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Products from '../../Data';
 import Card1 from '../../UI/Card1/Card1';
 
-const Filter = () => {
+const Filter = ({products}) => {
     const [query, setQuery] = useState("");
     return (
         <>

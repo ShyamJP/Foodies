@@ -2,7 +2,6 @@ import React from "react";
 import Card1 from "../Card1/Card1";
 import "./Cardlist.css"
 const Cardlist = (props) =>{
-    console.log(props.data);
     return(
         <>
             <h1 className="product_heading">{props.category}</h1>

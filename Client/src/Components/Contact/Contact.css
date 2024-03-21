@@ -1,6 +1,8 @@
 .contactpage{
     margin-top: -25px;
     background-color: #ccc;
+    margin-bottom: 0px; 
+    min-height: 100vh;
 }
 .contactlink{
     font-weight: 400;

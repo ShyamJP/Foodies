@@ -49,10 +49,10 @@ const Signup = () => {
 
     const submitHandeler = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/register",{name ,email,password})
+        axios.post("http://localhost:3001/signup",{name ,email,password})
         .then(result=> {
             console.log(result)
-            navigate('/login')
+            navigate('/')
         })
         .catch(e=>console.log(e))
     }
@@ -134,31 +134,6 @@ const Signup = () => {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>    
-            {/* <div>
-                <div>
-                    <h2>Register</h2>
-                    <form onSubmit={submitHandeler}>
-                        <div>
-                            <label htmlFor="name"><strong>Name</strong></label>
-                            <input type="text" placeholder="Enter Name" autoComplete="off" name="name" 
-                            onChange={(e)=> setname(e.target.value)} />
-                        </div>
-                        <div>
-                            <label htmlFor="email"><strong>Email</strong></label>
-                            <input type="email" placeholder="Enter Name" autoComplete="off" name="email" 
-                            onChange={(e)=> setemail(e.target.value)} />
-                        </div>
-                        <div>
-                            <label htmlFor="password"><strong>Password</strong></label>
-                            <input type="password" placeholder="Enter Password" name="password" 
-                            onChange={(e)=>setpassword(e.target.value)}/>
-                        </div>
-                        <button type="sumbit">Register</button>
-                        <p>Already have an account</p>
-                        <Link to="/login">Login</Link>
-                    </form>
-                </div>
-            </div> */}
         </>
     )
 }

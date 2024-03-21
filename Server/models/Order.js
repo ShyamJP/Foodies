@@ -15,8 +15,8 @@ const OrderSchema = new mongoose.Schema({
         required: true
     },
     "Date":{
-        type:Date,
-        default: new Date().toLocaleDateString()
+        type:String,
+        default: new Date().toDateString()
     }
 })
 

@@ -75,10 +75,10 @@ const Cart = () => {
     }
         
      //For Email   
-    const paymentHandler = async() =>{
+    const mailHandler = async() =>{
         let email = localStorage.getItem('email');
         console.log(amount)
-        await axios.post('http://localhost:3000/cart/mail',{email,amount})
+        await axios.post('http://localhost:3001/cart/mail',{email,amount})
         .then(()=>{console.log('Order successful and send mail')})
         .catch((err)=>{console.log(err)})
     }    
@@ -89,7 +89,7 @@ const Cart = () => {
             <Navbar />
 
             <main>
-                <div className="cartCard" >
+                <div className="cartCard-container" >
                     {
                         state1.map(p =>
                             <div className="cartCards mx-auto" key={p.id}>
@@ -108,7 +108,9 @@ const Cart = () => {
                             </div>)
                     }
                 </div>
-                <div className="totallist mx-auto text-center">
+                {
+                    amount === 0 ? (<img className="empty-cart" src="/Photos/cart.jpg" style={{width:"500px"}} alt="" />)
+                    :(<div className="totallist mx-auto text-center">
                     <h1>Total Bill</h1>
                     {
                         state1.map(p =>
@@ -122,7 +124,8 @@ const Cart = () => {
                     {/* <button className="paybtn" onClick={() => { amount>0 ? (notify()) : notifyErr() } }>Checkout And Pay</button> */}
                     <button className="paybtn" onClick={() => OrderHandler()}>Checkout And Pay</button>
                     {/* <button onClick={()=> paymentHandler()}>Mail</button> */}
-                </div>
+                </div>)
+                }
             </main>
             <ToastContainer />
         </>

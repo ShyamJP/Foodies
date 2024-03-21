@@ -12,10 +12,4 @@ export const delcart = (item)=>{
     }
 }
 
-export const getorder = (item)=>{
-    return{
-        type:"GETORDERS",
-        payload: item
-    }
-}
 

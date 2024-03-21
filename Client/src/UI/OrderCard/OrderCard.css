@@ -1,0 +1,30 @@
+.order-card{
+    background-color: rgba(150, 148, 148, 0.5);
+    font-size: small;
+    height: auto;
+    width: 800px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.order-card ol li{
+    font-size: large;
+    font-weight: 100;
+
+}
+.order-card h4{
+    font-weight: 900;
+    color: orangered;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total h6{
+    opacity: 0.6;
+}
+@media (max-width:600px){
+    .order-card{
+        width: 100%;
+    }
+}

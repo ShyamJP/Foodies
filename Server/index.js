@@ -2,19 +2,18 @@ const express = require('express')
 const cors = require('cors')
 const encoder = require('encoder')
 const DB = require('./DB/db');
-const auth = require('./Auth/auth')
-const OrderRoute = require('./Routes/Order')
-const ProductRoute = require('./Routes/ProductData')
 const PORT = process.env.PORT || 3001;
+const router = require('./Routes/user');
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use('/',auth);
-app.use('/',OrderRoute);
-app.use('/data',ProductRoute)
+// app.use('/',auth);
+// app.use('/',OrderRoute);
+// app.use('/data',ProductRoute)
 
+app.use('/',router);
 
 // nodemailer initialise
 var nodemailer = require('nodemailer');
@@ -25,9 +24,9 @@ const { default: OrderModel } = require('./models/Order');
 
 // mail request start
 app.post("/cart/mail", encoder, function (req, res) {
-    let mail = req.body.email;
-    let message = req.body.amount;
-    let msg = JSON.stringify(message);
+    let mail = toString(req.body.email);
+    let amount = toString(req.body.amount);
+    let msg = JSON.stringify(amount);
     console.log(msg);
   
     const transporter = nodemailer.createTransport({
