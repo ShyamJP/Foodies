@@ -9,7 +9,7 @@ const NavbarFront = () => {
     <>
       <nav className="fixed-top nav">
         <div className="title"><a className="navbar-brand fw-bold fs-3" href="/">
-          <img src="./Photos/hungryUp.png" title="app icon" alt="iconimg" style={{height:"2rem" , width:"13rem"}}/>
+          <img src="./Photos/foodies3.png" title="app icon" alt="iconimg" style={{height:"4.3rem" , width:"13rem"}}/>
         </a></div>
         <div className="menu" onClick={
           () => {

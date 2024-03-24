@@ -23,19 +23,8 @@ const Card1 = (props) => {
    const dispach = useDispatch();
    const [item,setItem] = useState([]);
 
-   // useEffect(()=>{
-   //   const getitems = () =>{
-   //    const cartitem = [props.title , props.url , props.desc , props.price ];
-   //    console.log(cartitem);
-   //    setItem(cartitem);
-   //   }
-   //   getitems();
-   // })
 
    const addItems = (d) =>{
-   // const cartitem = d;
-   // setItem(cartitem);
-   // console.log(item);
       dispach(addcart(d));
    }
     return(

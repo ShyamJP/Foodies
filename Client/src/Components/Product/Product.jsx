@@ -71,7 +71,7 @@ const Product = () => {
         <ListItemButton onClick={() => setupdatedata(product)}> <ListItemText primary="All Products" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("pizza")}><img src='/Photos/pizzaicon.png' style={{width:"30px" , marginRight:"10px"}} alt='imag'/>  <ListItemText primary="Pizza" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Burger")}><img src='/Photos/burgericon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Burger" /></ListItemButton>
-        <ListItemButton onClick={() => Filterdata("Burger")}><img src='/Photos/subwayicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Subway" /></ListItemButton>
+        <ListItemButton onClick={() => Filterdata("Subway")}><img src='/Photos/subwayicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Subway" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Panjabi")}><img src='/Photos/dishicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Panjabi" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Gujarati")}><img src='/Photos/dishicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Gujarati" /></ListItemButton>
         <ListItemButton onClick={() => Filterdata("Sandwich")}><img src='/Photos/sandwhichicon.png' style={{width:"30px" , marginRight:"10px"}} alt='icon' /><ListItemText primary="Sandwich" /></ListItemButton>
@@ -79,7 +79,7 @@ const Product = () => {
       </List>
       <Divider />
       <List>
-        <ListItemButton>{/* <ListItemIcon></ListItemIcon> */}<ListItemText primary="Special Menue" /></ListItemButton>
+        {/* <ListItemButton><ListItemIcon></ListItemIcon><ListItemText primary="Special Menue" /></ListItemButton> */}
       </List>
     </Box>
   );
@@ -134,7 +134,7 @@ const Product = () => {
 
           {/* SEARCH BAR */}
         </div>
-          {Products && <Filter  products= {product}/>}
+          {product && <Filter  products= {product}/>}
 
 
         {/* <Display /> */}

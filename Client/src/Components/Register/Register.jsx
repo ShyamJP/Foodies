@@ -15,6 +15,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Copyright(props) {
     return (
@@ -54,8 +56,24 @@ const Signup = () => {
             console.log(result)
             navigate('/')
         })
-        .catch(e=>console.log(e))
+        .catch(e=>{
+          console.log(e);
+          notifyErr();
+        })
     }
+
+    
+    // Wrong credentials
+    const notifyErr = () => toast.error('User Alredy Exist', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+  });
     return (
         <>
            <ThemeProvider theme={defaultTheme}>
@@ -134,6 +152,7 @@ const Signup = () => {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>    
+    <ToastContainer />
         </>
     )
 }

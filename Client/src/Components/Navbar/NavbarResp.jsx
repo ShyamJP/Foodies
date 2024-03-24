@@ -29,14 +29,13 @@ const Navbar = () => {
     localStorage.clear();
     Navigate("/")
   }
-  const [menuOpen,setmenuOpen] = useState(false);
-  // const [icon,seticon] = useState('DensityMediumIcon')  
+  const [menuOpen,setmenuOpen] = useState(false); 
   return (
     <>
       <nav className="fixed-top">
         <div className="title"><a className="navbar-brand fw-bold fs-3" href="/">
             {/* <img src="logo.png" />  */}
-            <img src="./Photos/hungryUp.png" alt="icon" style={{width:"13rem",height:"2.3rem"}}/>
+            <img src="./Photos/foodies3.png" alt="icon" style={{width:"13rem",height:"4.3rem"}}/>
           </a></div>
         <div className="menu" onClick={
           () => 
@@ -130,12 +129,6 @@ const Navbar = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {/* <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem> */}
         <Divider />
         <NavLink to="/" onClick={signoutHandler}>
         <MenuItem  >

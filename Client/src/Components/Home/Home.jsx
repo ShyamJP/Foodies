@@ -10,14 +10,13 @@ const Home = () => {
             <main>
                 <div>
                     <div className="front1">
-                        <div className="div1"><img src="/Photos/foodDish.png" alt="" /></div>
+                        <div className="div1"><img src="/Photos/pizzaIcon.png" alt="" /></div>
                         <div className="div2">
-                            <h1 data-aos="fade-up" data-aos-offset="0">Welcome to <span >HUNGRY</span><span >UP</span>!</h1>
+                            <h1 data-aos="fade-up" data-aos-offset="0">Welcome to <span >FOODIES</span><span ></span>!</h1>
                             {/* <h5>Eating Well Made Easy – Order, Relax, Enjoy.</h5> */}
                             {/* <h3>Crafting Memories, One Dish at a Time. Order Now</h3> */}
                             <h5>Flavors that Speak for Themselves, Now at Your Fingertips.</h5>
                             {/* <h5>Elevate Your Tastebuds with Every Order.s</h5> */}
-                            <p></p>
                         </div>
                     </div>
                 </div>

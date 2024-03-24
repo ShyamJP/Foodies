@@ -17,6 +17,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -49,15 +52,29 @@ const Login = () => {
             .then(result => {
                  console.log(result) //show login user data for test
                 // if (result.data.userData.email === email) {
-                if (result.data.userData.token) {
+                // if (result.data.userData.token ) {
                     localStorage.setItem("name", result.data.userData.name)
                     localStorage.setItem("email", result.data.userData.email)
                     localStorage.setItem("id", result.data.userData.id)
                     navigate("/home")
-                }
+                // }
             })
-            .catch(err => console.log(err))
+            .catch(err => {console.log(err)
+              notifyErr();
+            })
     }
+
+    // Wrong credentials
+    const notifyErr = () => toast.error('✖️ Wrong Credentials ✖️', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+  });
     return (
         <>
         <ThemeProvider theme={defaultTheme}>
@@ -125,6 +142,8 @@ const Login = () => {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+
+    <ToastContainer />
         </>
     )
 }

@@ -4,6 +4,7 @@ import Card1 from '../../UI/Card1/Card1';
 
 const Filter = ({products}) => {
     const [query, setQuery] = useState("");
+    console.log(products);
     return (
         <>
         <div className='filter'>

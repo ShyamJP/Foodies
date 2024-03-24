@@ -1,10 +1,12 @@
-# HungryUp - Food Ordering App
-HungryUp is a full-stack web application developed using the MERN stack (MongoDB, Express.js, React.js, Node.js) that allows users to order food online. It provides various functionalities such as adding 
-    items to cart, placing orders, filtering based on meal timings (breakfast, lunch, dinner), filtering based on food categories, and searching for specific items.
+# FOODIES - Food Ordering App
+FOODIES is a full-stack web application developed using the MERN stack (MongoDB, Express.js, React.js, Node.js) that allows users to order food online. It provides various functionalities such as adding 
+    items to cart, placing orders, filtering based on meal timings (breakfast, lunch, dinner), filtering based on food categories, and searching for specific items and Get your bill after placing an order.
 
-<!-- [link text](url)
+<!-- [link text](url) -->
 
-![alt taxt](img url) -->
+![Home Page](./Client//public/Photos/home.png)
+![Home Page](./Client//public/Photos/productpage.png) 
+![Home Page](./Client//public/Photos/cartpage.png)
 
 ## Features
 - **User Authentication:** Users can create an account, log in, and log out securely.
@@ -42,7 +44,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the Repository**
        
-        git clone https://github.com/ShyamJP/HungryUp
+        git clone https://github.com/ShyamJP/Foodies
 
 2. **Install Dependencies**
        
@@ -61,9 +63,11 @@ To run this project locally, follow these steps:
        
         npm start
 
-6. **Open your browser and navigate to http://localhost:3000 to start exploring HungryUp.**
+6. **Open your browser and navigate to http://localhost:3000 to start exploring FOODIES.**
 
 ## Contributions
-HungryUp welcomes contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, your input is valuable. Feel free to open an issue or submit a pull request.
+Foodies welcomes contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, your input is valuable. Feel free to open an issue or submit a pull request.
+
+🍔🥗🍕
 
 This project is under Construction so improvement is going on ..!
