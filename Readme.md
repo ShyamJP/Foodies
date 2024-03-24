@@ -68,6 +68,5 @@ To run this project locally, follow these steps:
 ## Contributions
 Foodies welcomes contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, your input is valuable. Feel free to open an issue or submit a pull request.
 
-🍔🥗🍕
 
 This project is under Construction so improvement is going on ..!
