@@ -13,6 +13,6 @@ app.use('/',router);
 
 app.get('/home',async(req,res)=>{
     // const email = await localStorage.getItem("email")
-    res.send("hello")
+    res.send("hello from Server")
 })
 app.listen(PORT,console.log("server is running.. on http://localhost:3001/"))
