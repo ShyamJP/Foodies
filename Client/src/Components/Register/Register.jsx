@@ -51,7 +51,7 @@ const Signup = () => {
 
     const submitHandeler = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/signup",{name ,email,password})
+        axios.post(`${process.env.REACT_APP_API_URL}/signup`,{name ,email,password})
         .then(result=> {
             console.log(result)
             navigate('/')

@@ -48,7 +48,7 @@ const Login = () => {
     const navigate = useNavigate()
     const submitHandeler = (event) => {
         event.preventDefault()
-        axios.post("http://localhost:3001/login", { email, password })
+        axios.post(`${process.env.REACT_APP_API_URL}/login`, { email, password })
             .then(result => {
                  console.log(result) //show login user data for test
                 // if (result.data.userData.email === email) {
@@ -128,7 +128,7 @@ const Login = () => {
               sx={{ mt: 3, mb: 2 }}
               onClick={submitHandeler}
             >
-              Sign In
+              Sign In<p>env{process.env.REACT_APP_API_URL} </p>
             </Button>
             <Grid container>
               <Grid item>

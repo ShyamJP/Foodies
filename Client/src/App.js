@@ -1,7 +1,6 @@
 import './App.css';
 import {Routes ,Route } from 'react-router-dom';
 import FrontPage from "./Components/FrontPage/Front.jsx"
-// import About from "./Components/About/About"
 import Cart from "./Components/Cart/Cart"
 import Product from "./Components/Product/Product"
 import Home from "./Components/Home/Home"

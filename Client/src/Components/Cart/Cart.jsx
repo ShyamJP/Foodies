@@ -66,7 +66,7 @@ const Cart = () => {
         }
         console.log(cartItems);
         let Total = amount;
-        await axios.post('http://localhost:3001/cart', { cartItems, Total, Id })
+        await axios.post(`${process.env.REACT_APP_API_URL}/cart`, { cartItems, Total, Id })
             .then((res) => {
                 console.log(res)
                 notify()
@@ -96,7 +96,7 @@ const Cart = () => {
     const mailHandler = async () => {
         let email = localStorage.getItem('email');
         console.log(amount)
-        await axios.post('http://localhost:3001/cart/mail', { email, amount })
+        await axios.post(`${process.env.REACT_APP_API_URL}/cart/mail`, { email, amount })
             .then(() => { console.log('Order successful and send mail') })
             .catch((err) => { console.log(err) })
     }

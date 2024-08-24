@@ -9,7 +9,7 @@ const Orders = ()=>{
 
     
     const getOrders = async()=>{
-        await axios.post('http://localhost:3001/orders',{Id})
+        await axios.post(`${process.env.REACT_APP_API_URL}/orders`,{Id})
         .then((res)=>{
             // console.log(res);
             setOrders(res.data.Orders);

@@ -22,7 +22,7 @@ const Product = () => {
   const [data, setupdatedata] = useState(null);
   
   const getAllProducts = async()=>{
-    await axios.get('http://localhost:3001/data')
+    await axios.get(`${process.env.REACT_APP_API_URL}/data`)
     .then(result=>{
       setProduct(result.data.result);
       setupdatedata(result.data.result);

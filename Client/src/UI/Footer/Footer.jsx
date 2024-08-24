@@ -56,7 +56,7 @@ const Footer = () => {
         <div class="row border-top mx-xl-5 py-4" style={{ "border-color": "rgba(256, 256, 256, .1) !important" }}>
           <div class="col-md-12  px-xl-0">
             <p class="mb-md-0 text-center text-md-left text-secondary w-100">
-              &copy; <a className="text-primary" href="#">FOODIES</a>. All Rights Reserved. Designed by
+              &copy; <a className="text-primary" href="/">FOODIES</a>. All Rights Reserved. Designed by
               <a className="text-primary" href="https://htmlcodex.com">Shyam Pankhaniy</a>
             </p>
           </div>
