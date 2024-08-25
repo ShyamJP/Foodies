@@ -128,7 +128,7 @@ const Login = () => {
               sx={{ mt: 3, mb: 2 }}
               onClick={submitHandeler}
             >
-              Sign In<p>env{process.env.REACT_APP_API_URL} </p>
+              Sign In
             </Button>
             <Grid container>
               <Grid item>
